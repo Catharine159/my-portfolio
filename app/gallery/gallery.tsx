@@ -91,7 +91,7 @@ function Placeholder({ ratio, colors }: (typeof PLACEHOLDERS)[number]) {
   )
 }
 
-function Lightbox({
+export function Lightbox({
   photos,
   index,
   onClose,
@@ -236,7 +236,7 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
   }, [])
 
   return (
-    <section className="relative left-1/2 w-[calc(100vw-2rem)] max-w-5xl -translate-x-1/2">
+    <section className="relative lg:left-1/2 lg:w-[calc(100vw-2rem)] lg:max-w-5xl lg:-translate-x-1/2">
       <header className="relative mb-14 text-center">
         <div
           aria-hidden="true"

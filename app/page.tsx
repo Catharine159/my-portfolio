@@ -18,7 +18,7 @@ export default function Page() {
         What I'm Proud Of 🏆
       </h2>
       <ul className="list-disc list-inside space-y-2 mb-4">
-        <li>Finished a half-marathon in Phuket, Thailand</li>
+        <li>Finished 2 half-marathons in Phuket, Thailand</li>
         <li>
           Placed third in the National Teenager Dragon Boat Competition held
           in Nanjing
