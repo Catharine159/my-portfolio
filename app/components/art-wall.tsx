@@ -15,7 +15,7 @@ export type Art = {
   height: number
   span: string
   tilt: string
-  pin?: boolean
+  tape?: boolean
 }
 
 function Reveal({ index, children }: { index: number; children: React.ReactNode }) {
@@ -51,7 +51,7 @@ function Reveal({ index, children }: { index: number; children: React.ReactNode 
   )
 }
 
-// A "gallery wall" of prints hung slightly crooked, pinned up with push pins.
+// A "gallery wall" of prints hung slightly crooked, pinned up with tape.
 // Hover straightens a piece and lifts it forward; click opens it full screen.
 export default function ArtWall({ arts }: { arts: Art[] }) {
   const [active, setActive] = useState<number | null>(null)
@@ -84,16 +84,11 @@ export default function ArtWall({ arts }: { arts: Art[] }) {
               aria-label={`Open artwork: ${art.alt}`}
               className={`group relative block w-full cursor-zoom-in bg-white p-1.5 text-left shadow-[0_14px_30px_-12px_rgba(0,0,0,0.4)] ring-1 ring-black/5 transition duration-500 ease-out hover:z-10 hover:rotate-0 hover:scale-[1.03] hover:shadow-[0_24px_50px_-14px_rgba(0,0,0,0.5)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500 sm:p-2 dark:bg-neutral-200 ${art.tilt}`}
             >
-              {art.pin && (
+              {art.tape && (
                 <span
                   aria-hidden="true"
-                  className={`pointer-events-none absolute left-1/2 top-2 z-10 -translate-x-1/2 -translate-y-[78%] bg-contain bg-center bg-no-repeat ${art.tilt.startsWith('-') ? '-scale-x-100' : ''}`}
-                  style={{
-                    backgroundImage: "url('/images/pin.svg')",
-                    aspectRatio: '128 / 124',
-                    width: 'clamp(2.75rem, 5vw, 4rem)',
-                    filter: 'drop-shadow(0 3px 2px rgba(0,0,0,0.45))',
-                  }}
+                  className={`absolute -top-3.5 left-1/2 z-10 w-24 -translate-x-1/2 bg-contain bg-center bg-no-repeat drop-shadow-sm sm:w-28 ${art.tilt.startsWith('-') ? 'rotate-12' : '-rotate-12'}`}
+                  style={{ backgroundImage: "url('/images/tape.png')", aspectRatio: '360 / 103' }}
                 />
               )}
               <Image

@@ -4,8 +4,8 @@ import { imageSize } from 'image-size'
 import type { Art } from 'app/components/art-wall'
 
 // Layout for the art wall. `span` places each piece on the grid (2 columns on
-// phones, 12 on larger screens), `tilt` hangs it slightly crooked, and `pin`
-// sticks a push pin in the top.
+// phones, 12 on larger screens), `tilt` hangs it slightly crooked, and `tape`
+// pins it up with a strip of washi tape.
 const ARTS: Omit<Art, 'width' | 'height'>[] = [
   {
     file: 'mountain-prayer-flags.jpg',
@@ -16,7 +16,7 @@ const ARTS: Omit<Art, 'width' | 'height'>[] = [
       "Created in 2025, this painting is about the snow mountains of Tibet. It took me about half a month to finish. I have always dreamed of traveling to Tibet, and I truly admire its unique culture, which is so different from mainland China, so I wanted to capture it in acrylic. The paints at my school came in only five colors: red, bright blue, yellow, black, and white, so I had to mix every other color myself. It was exhausting, but it gave me so much more freedom.",
     span: 'col-span-2 sm:col-span-7',
     tilt: '-rotate-1',
-    pin: true,
+    tape: true,
   },
   {
     file: 'fallen-angel-pencil.jpg',
@@ -35,7 +35,7 @@ const ARTS: Omit<Art, 'width' | 'height'>[] = [
     alt: 'Digital portrait with bold color blocks and a green stripe down the face',
     span: 'col-span-1 sm:col-span-3 sm:mt-8',
     tilt: '-rotate-1',
-    pin: true,
+    tape: true,
   },
   {
     file: 'night-market.jpg',
@@ -54,7 +54,7 @@ const ARTS: Omit<Art, 'width' | 'height'>[] = [
     alt: 'Black ink wash painting of an expressive face, close up',
     span: 'col-span-1 sm:col-span-4 sm:mt-10',
     tilt: 'rotate-2',
-    pin: true,
+    tape: true,
   },
   {
     file: 'digital-puppy-daisies.jpg',
@@ -67,7 +67,7 @@ const ARTS: Omit<Art, 'width' | 'height'>[] = [
     alt: 'Acrylic portrait of a woman in a black headdress with red accents',
     span: 'col-span-1 sm:col-span-5 sm:col-start-2',
     tilt: 'rotate-1',
-    pin: true,
+    tape: true,
   },
   {
     file: 'digital-apple.jpg',
