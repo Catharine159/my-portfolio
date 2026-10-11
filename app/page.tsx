@@ -47,7 +47,7 @@ function Photo({ photo }: { photo: (typeof PHOTOS)[number] }) {
 export default function Page() {
   return (
     <section>
-      <div className="relative mb-8">
+      <div className="relative mb-14">
         <div aria-hidden="true" className="polka-banner" />
         <h1 className="hero-name">
           Cath
@@ -70,7 +70,7 @@ export default function Page() {
           rine Li
         </h1>
       </div>
-      <div className="relative flow-root">
+      <div className="relative flow-root text-center">
         <Photo photo={PHOTOS[0]} />
         <p className="mb-4">
           {`I was born in Hong Kong but raised in mainland China. I feel more
@@ -86,7 +86,7 @@ export default function Page() {
           days and took care of me when I was stressed out or depressed.`}
         </p>
       </div>
-      <h2 className="font-semibold text-xl mb-4 mt-8 tracking-tighter">
+      <h2 className="font-semibold text-xl mb-4 mt-16 tracking-tighter">
         What I'm Proud Of 🏆
       </h2>
       <ul className="list-disc list-inside space-y-2 mb-4">
