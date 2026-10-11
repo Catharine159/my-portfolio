@@ -21,7 +21,7 @@ const PHOTOS = [
   },
 ]
 
-// A taped-up print. Hover straightens it and lifts it forward.
+// A pinned-up print. Hover straightens it and lifts it forward.
 function Photo({ photo }: { photo: (typeof PHOTOS)[number] }) {
   return (
     <div
@@ -29,8 +29,13 @@ function Photo({ photo }: { photo: (typeof PHOTOS)[number] }) {
     >
       <span
         aria-hidden="true"
-        className={`absolute -top-3 left-1/2 z-10 w-14 -translate-x-1/2 bg-contain bg-center bg-no-repeat drop-shadow-sm sm:w-20 xl:w-28 ${photo.place.includes('-rotate-') ? 'rotate-12' : '-rotate-12'}`}
-        style={{ backgroundImage: "url('/images/tape.png')", aspectRatio: '360 / 103' }}
+        className={`pointer-events-none absolute left-1/2 top-2 z-10 -translate-x-1/2 -translate-y-[78%] bg-contain bg-center bg-no-repeat ${photo.place.includes('-rotate-') ? '-scale-x-100' : ''}`}
+        style={{
+          backgroundImage: "url('/images/pin.svg')",
+          aspectRatio: '128 / 124',
+          width: 'clamp(2.25rem, 4vw, 3.5rem)',
+          filter: 'drop-shadow(0 3px 2px rgba(0,0,0,0.45))',
+        }}
       />
       <Image
         src={photo.src}
