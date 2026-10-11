@@ -70,35 +70,80 @@ export default function Page() {
           rine Li
         </h1>
       </div>
-      <div className="relative flow-root text-center">
+      <div className="relative flow-root text-center text-lg leading-relaxed sm:text-xl">
         <Photo photo={PHOTOS[0]} />
         <p className="mb-4">
-          {`I was born in Hong Kong but raised in mainland China. I feel more
-          connected to the mainland and to Mandarin than to Hong Kong's unique
-          culture. As a high schooler, I am quite interested in learning new
-          languages and in some of the specialized subjects my school offers.`}
+          I was born in <strong>Hong Kong</strong> but raised in mainland
+          China. I feel more connected to the mainland and to Mandarin than to{' '}
+          <strong>Hong Kong</strong>'s unique culture. As a high schooler, I am
+          quite interested in learning new languages and in some of the
+          specialized subjects my school offers.
         </p>
         <Photo photo={PHOTOS[1]} />
         <p className="mb-4">
-          {`Right now, I am taking French, Chemistry, and Biology at UWCT, which
-          makes my high school life a bit darker than I expected, lol. But I
-          have still met so many great people who supported me through hard
-          days and took care of me when I was stressed out or depressed.`}
+          Right now, I am taking French, Chemistry, and Biology at{' '}
+          <strong>UWCT</strong>, which makes my high school life a bit darker
+          than I expected, lol. But I have still met so many great people who
+          supported me through hard days and took care of me when I was
+          stressed out or depressed.
         </p>
       </div>
-      <h2 className="font-semibold text-xl mb-4 mt-16 tracking-tighter">
-        What I'm Proud Of 🏆
-      </h2>
-      <ul className="list-disc list-inside space-y-2 mb-4">
-        <li>Finished 2 half-marathons in Phuket, Thailand</li>
-        <li>
-          Placed third in the National Teenager Dragon Boat Competition held
-          in Nanjing
-        </li>
-        <li>Expert in kayaking and sailing</li>
-        <li>Exhibited two art pieces in the whole-school exhibition</li>
-        <li>Team leader of the Rescuing Gibbons Foundation</li>
-      </ul>
+      <div
+        className="flex flex-col items-center gap-6 sm:flex-row sm:gap-8"
+        style={{ marginTop: '11rem' }}
+      >
+        {/* The figure stays outside the book, on its left. */}
+        <Image
+          src="/images/achievements-cutout.webp"
+          alt=""
+          width={463}
+          height={720}
+          sizes="(min-width: 640px) 176px, 96px"
+          className="h-auto w-24 shrink-0 sm:w-44"
+        />
+        {/* The book page is the container; text scales with the book (container query units). */}
+        <div
+          className="relative w-full min-w-0 sm:flex-1"
+          style={{ containerType: 'inline-size', maxWidth: '26rem' }}
+        >
+          <Image
+            src="/images/book.png"
+            alt=""
+            width={888}
+            height={1083}
+            unoptimized
+            className="h-auto w-full select-none"
+          />
+          <ul
+            aria-label="What I'm proud of"
+            className="absolute list-disc"
+            style={{
+              inset: '17% 14% 14% 15%',
+              fontSize: '4.2cqw',
+              lineHeight: 1.3,
+              color: '#2b1d12',
+              paddingLeft: '1.2em',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              gap: '0.55em',
+            }}
+          >
+            <li>
+              Finished 2 <strong>half-marathons</strong> in Phuket, Thailand
+            </li>
+            <li>
+              Placed third in the National Teenager Dragon Boat Competition
+              held in Nanjing
+            </li>
+            <li>
+              Expert in <strong>kayaking</strong> and sailing
+            </li>
+            <li>Exhibited two art pieces in the whole-school exhibition</li>
+            <li>Team leader of the Rescuing Gibbons Foundation</li>
+          </ul>
+        </div>
+      </div>
     </section>
   )
 }
