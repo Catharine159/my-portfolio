@@ -8,6 +8,9 @@ import { Lightbox } from 'app/gallery/gallery'
 export type Art = {
   file: string
   alt: string
+  title?: string
+  meta?: string
+  description?: string
   width: number
   height: number
   span: string
@@ -56,7 +59,7 @@ export default function ArtWall({ arts }: { arts: Art[] }) {
 
   const photos = arts.map((a) => ({
     src: `/arts/${a.file}`,
-    caption: '',
+    caption: a.title ? `${a.title}${a.meta ? ` · ${a.meta}` : ''}` : '',
     width: a.width,
     height: a.height,
   }))
@@ -96,6 +99,19 @@ export default function ArtWall({ arts }: { arts: Art[] }) {
                 className="h-auto w-full"
               />
             </button>
+            {art.description && (
+              <figcaption className="mt-5 px-1 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                {art.title && (
+                  <p className="font-medium text-neutral-900 dark:text-neutral-100">
+                    {art.title}
+                  </p>
+                )}
+                {art.meta && (
+                  <p className="text-xs uppercase tracking-widest">{art.meta}</p>
+                )}
+                <p className="mt-2">{art.description}</p>
+              </figcaption>
+            )}
           </Reveal>
         </div>
       ))}

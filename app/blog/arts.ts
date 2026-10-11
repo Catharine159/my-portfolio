@@ -10,6 +10,10 @@ const ARTS: Omit<Art, 'width' | 'height'>[] = [
   {
     file: 'mountain-prayer-flags.jpg',
     alt: 'Acrylic painting of colorful prayer flags in front of a snow-covered mountain',
+    title: 'Snow Mountains of Tibet',
+    meta: 'Acrylic · 2025',
+    description:
+      "Created in 2025, this painting is about the snow mountains of Tibet. It took me about half a month to finish. I have always dreamed of traveling to Tibet, and I truly admire its unique culture, which is so different from mainland China, so I wanted to capture it in acrylic. The paints at my school came in only five colors: red, bright blue, yellow, black, and white, so I had to mix every other color myself. It was exhausting, but it gave me so much more freedom.",
     span: 'col-span-2 sm:col-span-7',
     tilt: '-rotate-1',
     tape: true,
