@@ -29,7 +29,8 @@ function Photo({ photo }: { photo: (typeof PHOTOS)[number] }) {
     >
       <span
         aria-hidden="true"
-        className="absolute -top-2.5 left-1/2 z-10 h-5 w-14 -translate-x-1/2 -rotate-3 bg-amber-200/80 shadow-sm"
+        className={`absolute -top-3 left-1/2 z-10 w-14 -translate-x-1/2 bg-contain bg-center bg-no-repeat drop-shadow-sm sm:w-20 xl:w-28 ${photo.place.includes('-rotate-') ? 'rotate-12' : '-rotate-12'}`}
+        style={{ backgroundImage: "url('/images/tape.png')", aspectRatio: '360 / 103' }}
       />
       <Image
         src={photo.src}
@@ -46,9 +47,29 @@ function Photo({ photo }: { photo: (typeof PHOTOS)[number] }) {
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        Catharine Li
-      </h1>
+      <div className="relative mb-8">
+        <div aria-hidden="true" className="polka-banner" />
+        <h1 className="hero-name">
+          Cath
+          <span className="relative inline-block">
+            a
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="hero-arrow"
+              style={{ top: '-0.14em' }}
+            >
+              <path d="M12 3v15M5.5 11.5L12 18l6.5-6.5" />
+            </svg>
+          </span>
+          rine Li
+        </h1>
+      </div>
       <div className="relative flow-root">
         <Photo photo={PHOTOS[0]} />
         <p className="mb-4">

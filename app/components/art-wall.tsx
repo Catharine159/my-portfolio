@@ -87,7 +87,8 @@ export default function ArtWall({ arts }: { arts: Art[] }) {
               {art.tape && (
                 <span
                   aria-hidden="true"
-                  className="absolute -top-2.5 left-1/2 z-10 h-5 w-14 -translate-x-1/2 -rotate-3 bg-amber-200/80 shadow-sm"
+                  className={`absolute -top-3.5 left-1/2 z-10 w-24 -translate-x-1/2 bg-contain bg-center bg-no-repeat drop-shadow-sm sm:w-28 ${art.tilt.startsWith('-') ? 'rotate-12' : '-rotate-12'}`}
+                  style={{ backgroundImage: "url('/images/tape.png')", aspectRatio: '360 / 103' }}
                 />
               )}
               <Image

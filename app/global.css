@@ -31,6 +31,9 @@
 
 html {
   min-width: 360px;
+  /* Full-bleed banners may extend past the viewport; never scroll sideways. */
+  overflow-x: hidden; /* fallback for browsers without `clip` */
+  overflow-x: clip;
 }
 
 .prose .anchor {
@@ -197,5 +200,69 @@ table {
   .gallery-rise,
   .gallery-drift {
     animation: none;
+  }
+}
+
+/* Black polka-dot banner behind the nav and page title; extends past the viewport sides and up past the top. */
+.polka-banner {
+  position: absolute;
+  left: -60vw;
+  right: -60vw;
+  bottom: -0.75rem;
+  height: 100rem;
+  z-index: -10;
+  background-image: url('/images/polka-bg.svg');
+  background-size: 44px auto;
+}
+
+
+/* Oversized homepage name on the black banner. */
+.hero-name {
+  font-size: clamp(2.5rem, 14vw, 7.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  color: #fff;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Nav links sit on the black banner on the homepage, so make them white and keep the nav from sticking over the white page. */
+body:has(.polka-banner) #nav a {
+  color: #fff;
+}
+body:has(.polka-banner) #nav a:hover {
+  color: #d4d4d4;
+}
+body:has(.polka-banner) aside > div {
+  position: static;
+}
+
+/* Little white arrow pointing down at the "a" before the "r" in the homepage name. */
+.hero-arrow {
+  position: absolute;
+  left: 50%;
+  top: -0.14em;
+  width: 0.3em;
+  height: 0.3em;
+  color: #fff;
+  animation: hero-bob 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-bob {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(0.06em);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-arrow {
+    animation: none;
+    transform: translateX(-50%);
   }
 }
